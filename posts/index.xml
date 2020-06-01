@@ -8,12 +8,28 @@
 		<lastBuildDate>Sun, 31 May 2020 21:58:25 +0100</lastBuildDate>
 		<atom:link href="https://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
 		<item>
-			<title>My First Post</title>
+			<title>Product Review: Jarvis Bamboo Standing Desk</title>
 			<link>https://example.org/posts/my-first-post/</link>
 			<pubDate>Sun, 31 May 2020 21:58:25 +0100</pubDate>
 			<guid isPermaLink="true">https://example.org/posts/my-first-post/</guid>
-			<description>&lt;h1 id=&#34;section&#34;&gt;Section&lt;/h1&gt;
-&lt;p&gt;The quick brown fox jumps over the lazy dog.&lt;/p&gt;
+			<description>&lt;p&gt;I&amp;rsquo;ve been pondering whether or not a standing desk would add value to my work flow and life. And I finally got the &lt;a href=&#34;https://www.fully.com/en-eu/standing-desks/jarvis-adjustable-height-desk-bamboo.html&#34;&gt;Jarvis Standing Desk&lt;/a&gt; for a couple reasons:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;It is probably a good investment now with the coronavirus pandemic and the advent of remote work.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I find that I need to stretch and move my body quite frequently.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Many times during the day, I find that I need to do something quick on my computer and I feel like having to sit down for that is slow and inefficient.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here a picture:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://example.org/jarvis.jpg&#34; alt=&#34;Jarvis Bamboo Standing Desk&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I went with the &lt;code&gt;120cm x 80cm&lt;/code&gt; option. The depth (80cm) of the desk is enough for my 31-inch display monitor.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s all automatic. I touch the button on the side of the desk to make it go up and down. I thought about getting the manual one with a crank but I&amp;rsquo;m glad I got the automatic one, because I adjust the desk height quite often.&lt;/p&gt;
+&lt;p&gt;After an hour or so of standing, I feel like sitting down for a half hour. Whether or not I work sitting down or standing up also depends on the activity I&amp;rsquo;m involved in: if I&amp;rsquo;m actively thinking about a problem or writing an exciting piece of code, I will probably do so while standing. The same applies if I am in a remote meeting that requires my full and undivided attention. I turn my camera off in those meetings, because I move quite a lot when I&amp;rsquo;m standing which may be distracting to other people.&lt;/p&gt;
+&lt;p&gt;Overall, I&amp;rsquo;m quite happy with the desk. It&amp;rsquo;s well-designed and built, and it adds value to my daily routine. It is slightly on the expensive side but its price is comparable to other products in the market.&lt;/p&gt;
 </description>
 		</item>
 	</channel>
