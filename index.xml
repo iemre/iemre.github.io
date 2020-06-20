@@ -5,8 +5,80 @@
 		<description>Recent content on blog etc</description>
 		<generator>Hugo 0.72.0 -- gohugo.io</generator>
 		<language>en-us</language>
-		<lastBuildDate>Sun, 31 May 2020 21:58:25 +0100</lastBuildDate>
+		<lastBuildDate>Sat, 20 Jun 2020 12:15:20 +0100</lastBuildDate>
 		<atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+		<item>
+			<title>Algorithm Journal: Graph Colouring with k=2</title>
+			<link>https://example.org/posts/graph-colouring-with-k-2/</link>
+			<pubDate>Sat, 20 Jun 2020 12:15:20 +0100</pubDate>
+			<guid isPermaLink="true">https://example.org/posts/graph-colouring-with-k-2/</guid>
+			<description>&lt;p&gt;You&amp;rsquo;re given an array of rivals:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;rivals = [&amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;C&amp;quot;]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;And a list of matches between two rivals represented in tuple form:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;matches = [(&amp;quot;A&amp;quot;, &amp;quot;B), (&amp;quot;B&amp;quot;, &amp;quot;C&amp;quot;)]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Assign a label (either &amp;ldquo;good&amp;rdquo; or &amp;ldquo;bad&amp;rdquo;) to each rival, so that there is no match
+where both rivals have the same label.&lt;/p&gt;
+&lt;h2 id=&#34;initial-thoughts-on-the-solution&#34;&gt;Initial thoughts on the solution&lt;/h2&gt;
+&lt;p&gt;At a first glance, it sounds very similar to &lt;a href=&#34;https://en.wikipedia.org/wiki/Graph_coloring&#34;&gt;the Graph Colouring problem&lt;/a&gt;.
+In fact I believe it is no different from it, although it is a special case of the graph colouring problem with 2 as the number of colour.&lt;/p&gt;
+&lt;p&gt;My solution to the problem:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;rivals = [&amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;C&amp;quot;]
+
+matches = [(&amp;quot;A&amp;quot;, &amp;quot;B), (&amp;quot;B&amp;quot;, &amp;quot;C&amp;quot;)]
+
+def solve():
+  labels = {}  # e.g. { &amp;quot;A&amp;quot;: &amp;quot;good&amp;quot;, &amp;quot;B&amp;quot;: &amp;quot;bad&amp;quot; ... }
+  
+  # key is a rival, and value is a set of other rivals the key rival 
+  # has a match with. E.g. { &amp;quot;A&amp;quot;: {&amp;quot;B&amp;quot;}, &amp;quot;B&amp;quot;: {&amp;quot;A&amp;quot;, &amp;quot;C&amp;quot;}, &amp;quot;C&amp;quot;: {&amp;quot;B&amp;quot;} }
+  graph = {}  
+
+  # construct the graph
+  for match in matches:
+    if match[0] not in graph:
+      match[0] = set()
+    if match[1] not in graph:
+      match[1] = set()
+
+    match[0].add(match[1])
+    match[1].add(match[0])
+
+  
+  for match in matches:
+    # the _label function is going to have a recursive ripple effect
+    # and solve the problem recursively
+    # but it is still necessary to iterate through all matches all call _label
+    # because if the graph is disconnected, calling _label on only one match wouldn&#39;t work.
+    # example: matches=[(&amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;), (&amp;quot;B&amp;quot;, &amp;quot;C&amp;quot;), (&amp;quot;Z&amp;quot;, &amp;quot;X)] where we have two separate subgraphs
+
+    arbitrary_label = &amp;quot;good&amp;quot;
+    _label(match[0], arbitrary_label, graph, labels)
+
+  return labels
+
+
+def _label(current_rival, label, graph, labels):
+  if current_rival in labels:
+    # already processed and labeled
+    return
+
+  new_label = &amp;quot;bad&amp;quot;
+  if label == &amp;quot;bad&amp;quot;:
+    new_label = &amp;quot;good&amp;quot;
+  
+  labels[current_rival] = label
+  matching_rivals = graph[current_rival]
+  
+  for matching_rival in matching_rivals:
+    labels[matching_rival] = new_label 
+    _label(matching_rival, new_label, graph, labels)
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I haven&amp;rsquo;t thought about how to solve the problem where the number of colours/labels &lt;code&gt;k &amp;gt; 2&lt;/code&gt;.
+I could always rely on backtracking, and build a tree of the whole candidate solution space. However even if I have the
+candidate solution space, I&amp;rsquo;d need to check if a candidate solution is a valid one which is another problem itself.
+The fact that the number of colours here is 2 makes the solution much easier, as the general solution to the graph colouring problem appears to be &lt;a href=&#34;https://en.wikipedia.org/wiki/NP-completeness&#34;&gt;NP-complete&lt;/a&gt;.&lt;/p&gt;
+</description>
+		</item>
 		<item>
 			<title>Product Review: Jarvis Bamboo Standing Desk</title>
 			<link>https://example.org/posts/my-first-post/</link>

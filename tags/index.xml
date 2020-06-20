@@ -5,6 +5,7 @@
 		<description>Recent content in Tags on blog etc</description>
 		<generator>Hugo 0.72.0 -- gohugo.io</generator>
 		<language>en-us</language>
+		<lastBuildDate>Sat, 20 Jun 2020 12:15:20 +0100</lastBuildDate>
 		<atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
 	</channel>
 </rss>
