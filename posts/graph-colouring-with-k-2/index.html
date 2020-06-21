@@ -78,7 +78,7 @@ def solve():
   for match in matches:
     # the _label function is going to have a recursive ripple effect
     # and solve the problem recursively
-    # but it is still necessary to iterate through all matches all call _label
+    # but it is still necessary to iterate through all matches and call _label
     # because if the graph is disconnected, 
     # calling _label on only one match would only process 1 subgraph.
     # example: matches=[(&quot;A&quot;, &quot;B&quot;), (&quot;B&quot;, &quot;C&quot;), (&quot;Z&quot;, &quot;X)] 
