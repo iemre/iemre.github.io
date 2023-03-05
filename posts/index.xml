@@ -12,23 +12,28 @@
 			<link>http://iemre.github.io/posts/software-development-from-ipad/</link>
 			<pubDate>Sun, 05 Mar 2023 13:58:44 +0000</pubDate>
 			<guid isPermaLink="true">http://iemre.github.io/posts/software-development-from-ipad/</guid>
-			<description>&lt;p&gt;This post describes my current &amp;ldquo;work from iPad&amp;rdquo; set-up. There are a few good reasons for doing this:&lt;/p&gt;
+			<description>&lt;p&gt;Picture of me developing &lt;a href=&#34;https://retroboxapp.com&#34;&gt;RetroBox&lt;/a&gt; on my iPad:
+&lt;img src=&#34;http://iemre.github.io/devonipad.jpg&#34; alt=&#34;Development on iPad&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This post describes my current &amp;ldquo;work from iPad&amp;rdquo; setup. There are a few good reasons for using the iPad for software development:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Battery. This is a big reason for me to take the iPad with me on the go instead of a laptop. Its battery lasts days.&lt;/li&gt;
-&lt;li&gt;Portability. The iPad is smaller and lighter than most laptops. And I can use it as an e-reader on public transport.&lt;/li&gt;
-&lt;li&gt;Drawing with the Apple pen&lt;/li&gt;
+&lt;li&gt;The battery: iPad battery lasts days.&lt;/li&gt;
+&lt;li&gt;Portability: iPad is smaller and lighter than most laptops. And I can use it as an e-reader on the public transport too.&lt;/li&gt;
+&lt;li&gt;Drawing with the Apple pen: I do use the pen when I&amp;rsquo;m solving a maths puzzle and when I need to visualise something.&lt;/li&gt;
+&lt;li&gt;The screen: Although smaller than a laptop&amp;rsquo;s screen, the iPad screen is crisper and more readable than many laptops. In fact, as far as the pixel per inch (PPI) metric goes, I don&amp;rsquo;t know a laptop that has a better screen.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;hardware&#34;&gt;Hardware&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;The 2018 iPad Pro with 11&amp;rsquo;&amp;rsquo; display, 64GB storage - &lt;a href=&#34;https://support.apple.com/kb/SP784&#34;&gt;https://support.apple.com/kb/SP784&lt;/a&gt;. I&amp;rsquo;ve never needed to upgrade my iPad even after 5 years. Apple built it too well.&lt;/li&gt;
-&lt;li&gt;The Apple Magic Keyboard. This does the job. Not the most ergonomic keyboard but it&amp;rsquo;s integration with the iPad is very good, and I do sometimes use the trackpad.&lt;/li&gt;
-&lt;li&gt;Mac Mini (M2): Cheapest one available on the market. The key feature is the power efficiency. It is more than enough for my development work (I don&amp;rsquo;t compile the Linux Kernel). It is connected to internet via ethernet, the ethernet connection is important as it allows the Mac to wake up when I ssh into it. I wasn&amp;rsquo;t able to get the &amp;ldquo;wake up upon request&amp;rdquo; featue working without the cabled ethernet connection. I use a powerline adapter (&lt;a href=&#34;https://amzn.eu/d/aN2s7W0&#34;&gt;this one&lt;/a&gt;) to avoid laying cables around the flat.&lt;/li&gt;
+&lt;li&gt;The 2018 iPad Pro with an 11-inch display, and a storage of 64GB (&lt;a href=&#34;https://support.apple.com/kb/SP784)&#34;&gt;https://support.apple.com/kb/SP784)&lt;/a&gt;. I&amp;rsquo;ve never needed to upgrade my iPad even after 5 years. Apple built it too well.&lt;/li&gt;
+&lt;li&gt;The Apple Magic Keyboard. This does the job. Not the most ergonomic keyboard but its integration with the iPad is very good, and I do sometimes use its trackpad.&lt;/li&gt;
+&lt;li&gt;The Mac Mini (M2): This is the backend server of my dev setup. Cheapest one available on the market. The key feature for me is its low power consumption requirements. It is connected to internet via an ethernet cable. This ethernet connection is important as it allows the Mac to wake up when I ssh into it. I wasn&amp;rsquo;t able to get the &amp;ldquo;wake up upon request&amp;rdquo; featue working without the cabled ethernet connection. I use a powerline adapter (&lt;a href=&#34;https://amzn.eu/d/aN2s7W0&#34;&gt;this one&lt;/a&gt;) to avoid laying cables around the flat.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;software&#34;&gt;Software&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;The Blink Shell app for iOS is really unparalleled at SSH. I paid a bit of money for it but it was worth every penny. Works well with a display monitor too when you connect your tablet to one.&lt;/li&gt;
-&lt;li&gt;Tailscale VPN is indispensable. One is installed on the OSX on Mac Mini at home, another one on the iPad. You sign in with your email and can see all of your devices and their IP addresses connected to the VPN. The IP address you get on the VPN are fairly static, which allows me to not worry about looking up the IP address of my Mac every time I ssh into it.&lt;/li&gt;
-&lt;li&gt;On the server side (Mac Mini), I have &lt;a href=&#34;https://neovim.io&#34;&gt;Neovim&lt;/a&gt; installed with the &lt;a href=&#34;https://github.com/junegunn/vim-plug&#34;&gt;Vim Plug&lt;/a&gt; plugin manager. Here is my Vim Plug configuration with my favourite plugins:
+&lt;li&gt;The Blink Shell app for iOS is really unparalleled at SSH. It works well with a display monitor too, if you connect your tablet to one.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://tailscale.com&#34;&gt;Tailscale VPN&lt;/a&gt;. One Tailscale instance/client is installed on the OSX on the Mac Mini at home, another one on the iPad. You sign in with your email and can see all of your devices and their IP addresses connected to the VPN. The IP addresses you get on Tailscale are fairly static. This allows me to not worry about looking up the IP address of my Mac every time I ssh into it.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/tmux/tmux/wiki&#34;&gt;tmux&lt;/a&gt; (Backend): Tmux is really a requirement. If I lose my internet connection, my work won&amp;rsquo;t be lost because tmux will keep the work in a tmux session. I ssh into my Mac again, and run &lt;code&gt;tmux a&lt;/code&gt; which attaches the new ssh session to the existing tmux session from before I lost connection, and everything is back as I left it.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ngrok.com&#34;&gt;ngrok&lt;/a&gt; (Backend): For serving HTTP&lt;/li&gt;
+&lt;li&gt;Editor: I have &lt;a href=&#34;https://neovim.io&#34;&gt;Neovim&lt;/a&gt; installed with the &lt;a href=&#34;https://github.com/junegunn/vim-plug&#34;&gt;Vim Plug&lt;/a&gt; plugin manager. Here is my Vim Plug configuration with my favourite plugins:
 &lt;ul&gt;
 &lt;li&gt;NERDTree for managing files&lt;/li&gt;
 &lt;li&gt;CtrlP for fuzzy-finding files&lt;/li&gt;
@@ -86,11 +91,7 @@ call plug#end()
 &amp;#34; You can revert the settings after the call like so:
 &amp;#34;   filetype indent off   &amp;#34; Disable file-type-specific indentation
 &amp;#34;   syntax off            &amp;#34; Disable syntax highlighting
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;tmux: Tmux is really a requirement. If I lose my internet connection, my work won&amp;rsquo;t be lost because tmux will keep the work in a tmux session. I ssh into my Mac again, and run &lt;code&gt;tmux a&lt;/code&gt; which attaches the ssh session to the existing tmux session, and everything is back as I left them.&lt;/li&gt;
-&lt;li&gt;ngrok: For serving HTTP&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
 		</item>
 		<item>
 			<title>Algorithm Journal: Graph Colouring with k=2</title>

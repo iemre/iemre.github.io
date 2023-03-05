@@ -5,8 +5,8 @@
   <title>Software Development from Apple iPad | blog etc</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="description" content="This post describes my current &ldquo;work from iPad&rdquo; set-up. There are a few good reasons for doing this:
-Battery. This is a big reason for me to take the iPad with me on the go instead of a laptop. Its battery lasts days. Portability. The iPad is smaller and lighter than most laptops. And I can use it as an e-reader on public transport. Drawing with the Apple pen Hardware The 2018 iPad Pro with 11&rsquo;&rsquo; display, 64GB storage - https://support." />
+  <meta name="description" content="Picture of me developing RetroBox on my iPad: This post describes my current &ldquo;work from iPad&rdquo; setup. There are a few good reasons for using the iPad for software development:
+The battery: iPad battery lasts days. Portability: iPad is smaller and lighter than most laptops. And I can use it as an e-reader on the public transport too. Drawing with the Apple pen: I do use the pen when I&rsquo;m solving a maths puzzle and when I need to visualise something." />
   <meta name="author" content="" />
   <meta name="generator" content="Hugo 0.110.0">
   <link href="/index.xml" rel="alternate" type="application/rss+xml" title="blog etc Feed" />
@@ -41,23 +41,28 @@ Battery. This is a big reason for me to take the iPad with me on the go instead 
 
   </div>
   <div>
-    <p>This post describes my current &ldquo;work from iPad&rdquo; set-up. There are a few good reasons for doing this:</p>
+    <p>Picture of me developing <a href="https://retroboxapp.com">RetroBox</a> on my iPad:
+<img src="/devonipad.jpg" alt="Development on iPad"></p>
+<p>This post describes my current &ldquo;work from iPad&rdquo; setup. There are a few good reasons for using the iPad for software development:</p>
 <ul>
-<li>Battery. This is a big reason for me to take the iPad with me on the go instead of a laptop. Its battery lasts days.</li>
-<li>Portability. The iPad is smaller and lighter than most laptops. And I can use it as an e-reader on public transport.</li>
-<li>Drawing with the Apple pen</li>
+<li>The battery: iPad battery lasts days.</li>
+<li>Portability: iPad is smaller and lighter than most laptops. And I can use it as an e-reader on the public transport too.</li>
+<li>Drawing with the Apple pen: I do use the pen when I&rsquo;m solving a maths puzzle and when I need to visualise something.</li>
+<li>The screen: Although smaller than a laptop&rsquo;s screen, the iPad screen is crisper and more readable than many laptops. In fact, as far as the pixel per inch (PPI) metric goes, I don&rsquo;t know a laptop that has a better screen.</li>
 </ul>
 <h2 id="hardware">Hardware</h2>
 <ul>
-<li>The 2018 iPad Pro with 11&rsquo;&rsquo; display, 64GB storage - <a href="https://support.apple.com/kb/SP784">https://support.apple.com/kb/SP784</a>. I&rsquo;ve never needed to upgrade my iPad even after 5 years. Apple built it too well.</li>
-<li>The Apple Magic Keyboard. This does the job. Not the most ergonomic keyboard but it&rsquo;s integration with the iPad is very good, and I do sometimes use the trackpad.</li>
-<li>Mac Mini (M2): Cheapest one available on the market. The key feature is the power efficiency. It is more than enough for my development work (I don&rsquo;t compile the Linux Kernel). It is connected to internet via ethernet, the ethernet connection is important as it allows the Mac to wake up when I ssh into it. I wasn&rsquo;t able to get the &ldquo;wake up upon request&rdquo; featue working without the cabled ethernet connection. I use a powerline adapter (<a href="https://amzn.eu/d/aN2s7W0">this one</a>) to avoid laying cables around the flat.</li>
+<li>The 2018 iPad Pro with an 11-inch display, and a storage of 64GB (<a href="https://support.apple.com/kb/SP784)">https://support.apple.com/kb/SP784)</a>. I&rsquo;ve never needed to upgrade my iPad even after 5 years. Apple built it too well.</li>
+<li>The Apple Magic Keyboard. This does the job. Not the most ergonomic keyboard but its integration with the iPad is very good, and I do sometimes use its trackpad.</li>
+<li>The Mac Mini (M2): This is the backend server of my dev setup. Cheapest one available on the market. The key feature for me is its low power consumption requirements. It is connected to internet via an ethernet cable. This ethernet connection is important as it allows the Mac to wake up when I ssh into it. I wasn&rsquo;t able to get the &ldquo;wake up upon request&rdquo; featue working without the cabled ethernet connection. I use a powerline adapter (<a href="https://amzn.eu/d/aN2s7W0">this one</a>) to avoid laying cables around the flat.</li>
 </ul>
 <h2 id="software">Software</h2>
 <ul>
-<li>The Blink Shell app for iOS is really unparalleled at SSH. I paid a bit of money for it but it was worth every penny. Works well with a display monitor too when you connect your tablet to one.</li>
-<li>Tailscale VPN is indispensable. One is installed on the OSX on Mac Mini at home, another one on the iPad. You sign in with your email and can see all of your devices and their IP addresses connected to the VPN. The IP address you get on the VPN are fairly static, which allows me to not worry about looking up the IP address of my Mac every time I ssh into it.</li>
-<li>On the server side (Mac Mini), I have <a href="https://neovim.io">Neovim</a> installed with the <a href="https://github.com/junegunn/vim-plug">Vim Plug</a> plugin manager. Here is my Vim Plug configuration with my favourite plugins:
+<li>The Blink Shell app for iOS is really unparalleled at SSH. It works well with a display monitor too, if you connect your tablet to one.</li>
+<li><a href="https://tailscale.com">Tailscale VPN</a>. One Tailscale instance/client is installed on the OSX on the Mac Mini at home, another one on the iPad. You sign in with your email and can see all of your devices and their IP addresses connected to the VPN. The IP addresses you get on Tailscale are fairly static. This allows me to not worry about looking up the IP address of my Mac every time I ssh into it.</li>
+<li><a href="https://github.com/tmux/tmux/wiki">tmux</a> (Backend): Tmux is really a requirement. If I lose my internet connection, my work won&rsquo;t be lost because tmux will keep the work in a tmux session. I ssh into my Mac again, and run <code>tmux a</code> which attaches the new ssh session to the existing tmux session from before I lost connection, and everything is back as I left it.</li>
+<li><a href="https://ngrok.com">ngrok</a> (Backend): For serving HTTP</li>
+<li>Editor: I have <a href="https://neovim.io">Neovim</a> installed with the <a href="https://github.com/junegunn/vim-plug">Vim Plug</a> plugin manager. Here is my Vim Plug configuration with my favourite plugins:
 <ul>
 <li>NERDTree for managing files</li>
 <li>CtrlP for fuzzy-finding files</li>
@@ -115,11 +120,7 @@ call plug#end()
 &#34; You can revert the settings after the call like so:
 &#34;   filetype indent off   &#34; Disable file-type-specific indentation
 &#34;   syntax off            &#34; Disable syntax highlighting
-</code></pre><ul>
-<li>tmux: Tmux is really a requirement. If I lose my internet connection, my work won&rsquo;t be lost because tmux will keep the work in a tmux session. I ssh into my Mac again, and run <code>tmux a</code> which attaches the ssh session to the existing tmux session, and everything is back as I left them.</li>
-<li>ngrok: For serving HTTP</li>
-</ul>
-
+</code></pre>
   </div>
 </div>
   <div class="footer">
