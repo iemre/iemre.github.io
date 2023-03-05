@@ -1,47 +1,198 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>blog etc</title>
-    <link>http://iemre.github.io/</link>
-    <description>Recent content on blog etc</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 05 Mar 2023 13:58:44 +0000</lastBuildDate><atom:link href="http://iemre.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Software Development from Apple iPad</title>
-      <link>http://iemre.github.io/posts/software-development-from-ipad/</link>
-      <pubDate>Sun, 05 Mar 2023 13:58:44 +0000</pubDate>
-      
-      <guid>http://iemre.github.io/posts/software-development-from-ipad/</guid>
-      <description>This post describes my current &amp;ldquo;work from iPad&amp;rdquo; set-up. There are a few good reasons for doing this:
-Battery. This is a big reason for me to take the iPad with me on the go instead of a laptop. Its battery lasts days. Portability. The iPad is smaller and lighter than most laptops. And I can use it as an e-reader on public transport. Drawing with the Apple pen Hardware The 2018 iPad Pro with 11&amp;rsquo;&amp;rsquo; display, 64GB storage - https://support.</description>
-    </item>
-    
-    <item>
-      <title>Algorithm Journal: Graph Colouring with k=2</title>
-      <link>http://iemre.github.io/posts/graph-colouring-with-k-2/</link>
-      <pubDate>Sat, 20 Jun 2020 12:15:20 +0100</pubDate>
-      
-      <guid>http://iemre.github.io/posts/graph-colouring-with-k-2/</guid>
-      <description>You&amp;rsquo;re given an array of rivals:
-rivals = [&amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;C&amp;quot;]
-And a list of matches between two rivals represented in tuple form:
-matches = [(&amp;quot;A&amp;quot;, &amp;quot;B), (&amp;quot;B&amp;quot;, &amp;quot;C&amp;quot;)]
-Assign a label (either &amp;ldquo;good&amp;rdquo; or &amp;ldquo;bad&amp;rdquo;) to each rival, so that there is no match where both rivals have the same label.
-Initial thoughts on the solution At a first glance, it sounds very similar to the Graph Colouring problem. In fact I believe it is no different from it, although it is a special case of the graph colouring problem with 2 as the number of colours.</description>
-    </item>
-    
-    <item>
-      <title>Product Review: Jarvis Bamboo Standing Desk</title>
-      <link>http://iemre.github.io/posts/my-first-post/</link>
-      <pubDate>Sun, 31 May 2020 21:58:25 +0100</pubDate>
-      
-      <guid>http://iemre.github.io/posts/my-first-post/</guid>
-      <description>I&amp;rsquo;ve been pondering whether or not a standing desk would add value to my work flow and life. And I finally got the Jarvis Standing Desk for a couple reasons:
-It is probably a good investment now with the coronavirus pandemic and the advent of remote work.
-I find that I need to stretch and move my body quite frequently.
-Many times during the day, I find that I need to do something quick on my computer and I feel like having to sit down for that is slow and inefficient.</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>blog etc</title>
+		<link>http://iemre.github.io/</link>
+		<description>Recent content on blog etc</description>
+		<generator>Hugo 0.110.0 -- gohugo.io</generator>
+		<language>en-us</language>
+		<lastBuildDate>Sun, 05 Mar 2023 13:58:44 +0000</lastBuildDate>
+		<atom:link href="http://iemre.github.io/index.xml" rel="self" type="application/rss+xml" />
+		<item>
+			<title>Software Development from Apple iPad</title>
+			<link>http://iemre.github.io/posts/software-development-from-ipad/</link>
+			<pubDate>Sun, 05 Mar 2023 13:58:44 +0000</pubDate>
+			<guid isPermaLink="true">http://iemre.github.io/posts/software-development-from-ipad/</guid>
+			<description>&lt;p&gt;This post describes my current &amp;ldquo;work from iPad&amp;rdquo; set-up. There are a few good reasons for doing this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Battery. This is a big reason for me to take the iPad with me on the go instead of a laptop. Its battery lasts days.&lt;/li&gt;
+&lt;li&gt;Portability. The iPad is smaller and lighter than most laptops. And I can use it as an e-reader on public transport.&lt;/li&gt;
+&lt;li&gt;Drawing with the Apple pen&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;hardware&#34;&gt;Hardware&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The 2018 iPad Pro with 11&amp;rsquo;&amp;rsquo; display, 64GB storage - &lt;a href=&#34;https://support.apple.com/kb/SP784&#34;&gt;https://support.apple.com/kb/SP784&lt;/a&gt;. I&amp;rsquo;ve never needed to upgrade my iPad even after 5 years. Apple built it too well.&lt;/li&gt;
+&lt;li&gt;The Apple Magic Keyboard. This does the job. Not the most ergonomic keyboard but it&amp;rsquo;s integration with the iPad is very good, and I do sometimes use the trackpad.&lt;/li&gt;
+&lt;li&gt;Mac Mini (M2): Cheapest one available on the market. The key feature is the power efficiency. It is more than enough for my development work (I don&amp;rsquo;t compile the Linux Kernel). It is connected to internet via ethernet, the ethernet connection is important as it allows the Mac to wake up when I ssh into it. I wasn&amp;rsquo;t able to get the &amp;ldquo;wake up upon request&amp;rdquo; featue working without the cabled ethernet connection. I use a powerline adapter (&lt;a href=&#34;https://amzn.eu/d/aN2s7W0&#34;&gt;this one&lt;/a&gt;) to avoid laying cables around the flat.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;software&#34;&gt;Software&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The Blink Shell app for iOS is really unparalleled at SSH. I paid a bit of money for it but it was worth every penny. Works well with a display monitor too when you connect your tablet to one.&lt;/li&gt;
+&lt;li&gt;Tailscale VPN is indispensable. One is installed on the OSX on Mac Mini at home, another one on the iPad. You sign in with your email and can see all of your devices and their IP addresses connected to the VPN. The IP address you get on the VPN are fairly static, which allows me to not worry about looking up the IP address of my Mac every time I ssh into it.&lt;/li&gt;
+&lt;li&gt;On the server side (Mac Mini), I have &lt;a href=&#34;https://neovim.io&#34;&gt;Neovim&lt;/a&gt; installed with the &lt;a href=&#34;https://github.com/junegunn/vim-plug&#34;&gt;Vim Plug&lt;/a&gt; plugin manager. Here is my Vim Plug configuration with my favourite plugins:
+&lt;ul&gt;
+&lt;li&gt;NERDTree for managing files&lt;/li&gt;
+&lt;li&gt;CtrlP for fuzzy-finding files&lt;/li&gt;
+&lt;li&gt;vim-go for Golang&lt;/li&gt;
+&lt;li&gt;vim-clap: An experimental new addition to my library written in Rust. This does a lot of things! So far I&amp;rsquo;ve used it mainly for looking at Git history and commit diffs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ cat $HOME/.config/nvim/init.vim 
+
+
+&amp;#34; Open file browser on the side when F is pressed twice in a row
+nnoremap FF :NERDTreeToggle&amp;lt;CR&amp;gt;
+
+call plug#begin()
+&amp;#34; Multiple Plug commands can be written in a single line using | separators
+Plug &amp;#39;SirVer/ultisnips&amp;#39; | Plug &amp;#39;honza/vim-snippets&amp;#39;
+
+&amp;#34; On-demand loading
+Plug &amp;#39;preservim/nerdtree&amp;#39;, { &amp;#39;on&amp;#39;: &amp;#39;NERDTreeToggle&amp;#39; }
+Plug &amp;#39;tpope/vim-fireplace&amp;#39;, { &amp;#39;for&amp;#39;: &amp;#39;clojure&amp;#39; }
+
+&amp;#34; Using a non-default branch
+Plug &amp;#39;rdnetto/YCM-Generator&amp;#39;, { &amp;#39;branch&amp;#39;: &amp;#39;stable&amp;#39; }
+
+&amp;#34; Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
+Plug &amp;#39;fatih/vim-go&amp;#39;, { &amp;#39;tag&amp;#39;: &amp;#39;*&amp;#39; }
+
+&amp;#34; Plugin options
+Plug &amp;#39;nsf/gocode&amp;#39;, { &amp;#39;tag&amp;#39;: &amp;#39;v.20150303&amp;#39;, &amp;#39;rtp&amp;#39;: &amp;#39;vim&amp;#39; }
+
+&amp;#34; Plugin outside ~/.vim/plugged with post-update hook
+Plug &amp;#39;junegunn/fzf&amp;#39;, { &amp;#39;dir&amp;#39;: &amp;#39;~/.fzf&amp;#39;, &amp;#39;do&amp;#39;: &amp;#39;./install --all&amp;#39; }
+
+Plug &amp;#39;kien/ctrlp.vim&amp;#39;
+
+&amp;#34; Build the Rust binary if `cargo` exists on your system.
+Plug &amp;#39;liuchengxu/vim-clap&amp;#39;, { &amp;#39;do&amp;#39;: &amp;#39;:Clap install-binary&amp;#39; }
+
+&amp;#34; The bang version will try to download the prebuilt binary if `cargo` does not exist.
+Plug &amp;#39;liuchengxu/vim-clap&amp;#39;, { &amp;#39;do&amp;#39;: &amp;#39;:Clap install-binary!&amp;#39; }
+
+&amp;#34; `:Clap install-binary[!]` will always try to compile the binary locally.
+&amp;#34; If you do care about the disk used for the compilation, use the way of force download,
+&amp;#34; which will directly download the prebuilt binary even if `cargo` is available.
+Plug &amp;#39;liuchengxu/vim-clap&amp;#39;, { &amp;#39;do&amp;#39;: { -&amp;gt; clap#installer#force_download() } }
+
+&amp;#34; `:Clap install-binary[!]` will run using the terminal feature which is inherently async.
+&amp;#34; If you don&amp;#39;t want that and hope to run the hook synchorously:
+Plug &amp;#39;liuchengxu/vim-clap&amp;#39;, { &amp;#39;do&amp;#39;: has(&amp;#39;win32&amp;#39;) ? &amp;#39;cargo build --release&amp;#39; : &amp;#39;make&amp;#39; }
+
+&amp;#34; Initialize plugin system
+&amp;#34; - Automatically executes `filetype plugin indent on` and `syntax enable`.
+call plug#end()
+&amp;#34; You can revert the settings after the call like so:
+&amp;#34;   filetype indent off   &amp;#34; Disable file-type-specific indentation
+&amp;#34;   syntax off            &amp;#34; Disable syntax highlighting
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;tmux: Tmux is really a requirement. If I lose my internet connection, my work won&amp;rsquo;t be lost because tmux will keep the work in a tmux session. I ssh into my Mac again, and run &lt;code&gt;tmux a&lt;/code&gt; which attaches the ssh session to the existing tmux session, and everything is back as I left them.&lt;/li&gt;
+&lt;li&gt;ngrok: For serving HTTP&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+		</item>
+		<item>
+			<title>Algorithm Journal: Graph Colouring with k=2</title>
+			<link>http://iemre.github.io/posts/graph-colouring-with-k-2/</link>
+			<pubDate>Sat, 20 Jun 2020 12:15:20 +0100</pubDate>
+			<guid isPermaLink="true">http://iemre.github.io/posts/graph-colouring-with-k-2/</guid>
+			<description>&lt;p&gt;You&amp;rsquo;re given an array of rivals:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;rivals = [&amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;C&amp;quot;]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;And a list of matches between two rivals represented in tuple form:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;matches = [(&amp;quot;A&amp;quot;, &amp;quot;B), (&amp;quot;B&amp;quot;, &amp;quot;C&amp;quot;)]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Assign a label (either &amp;ldquo;good&amp;rdquo; or &amp;ldquo;bad&amp;rdquo;) to each rival, so that there is no match
+where both rivals have the same label.&lt;/p&gt;
+&lt;h2 id=&#34;initial-thoughts-on-the-solution&#34;&gt;Initial thoughts on the solution&lt;/h2&gt;
+&lt;p&gt;At a first glance, it sounds very similar to &lt;a href=&#34;https://en.wikipedia.org/wiki/Graph_coloring&#34;&gt;the Graph Colouring problem&lt;/a&gt;.
+In fact I believe it is no different from it, although it is a special case of the graph colouring problem with 2 as the number of colours.&lt;/p&gt;
+&lt;p&gt;My solution to the problem:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;rivals = [&amp;#34;A&amp;#34;, &amp;#34;B&amp;#34;, &amp;#34;C&amp;#34;]
+
+matches = [(&amp;#34;A&amp;#34;, &amp;#34;B), (&amp;#34;B&amp;#34;, &amp;#34;C&amp;#34;)]
+
+def solve():
+  labels = {}  # e.g. { &amp;#34;A&amp;#34;: &amp;#34;good&amp;#34;, &amp;#34;B&amp;#34;: &amp;#34;bad&amp;#34; ... }
+  
+  # key is a rival, and value is a set of other rivals the key rival 
+  # has a match with. E.g. { &amp;#34;A&amp;#34;: {&amp;#34;B&amp;#34;}, &amp;#34;B&amp;#34;: {&amp;#34;A&amp;#34;, &amp;#34;C&amp;#34;}, &amp;#34;C&amp;#34;: {&amp;#34;B&amp;#34;} }
+  graph = {}  
+
+  # construct the graph
+  for match in matches:
+    if match[0] not in graph:
+      graph[match[0]] = set()
+    if match[1] not in graph:
+      graph[match[1]] = set()
+
+    graph[match[0]].add(match[1])
+    graph[match[1]].add(match[0])
+
+  
+  for match in matches:
+    # the _label function is going to have a recursive ripple effect
+    # and solve the problem recursively
+    # but it is still necessary to iterate through
+    # all matches and call _label on them
+    # because if the graph is disconnected and have
+    # many subgraphs,
+    # calling _label on only one match would only
+    # solve the problem for one subgraph
+    # example: 
+    # matches=[(&amp;#34;A&amp;#34;, &amp;#34;B&amp;#34;), (&amp;#34;B&amp;#34;, &amp;#34;C&amp;#34;), (&amp;#34;Z&amp;#34;, &amp;#34;X)] 
+    # where we have two separate subgraphs
+
+    arbitrary_label = &amp;#34;good&amp;#34;
+    _label(match[0], arbitrary_label, graph, labels)
+
+  return labels
+
+
+def _label(current_rival, label, graph, labels):
+  if current_rival in labels:
+    # already processed and labeled
+    return
+
+  new_label = &amp;#34;bad&amp;#34;
+  if label == &amp;#34;bad&amp;#34;:
+    new_label = &amp;#34;good&amp;#34;
+  
+  labels[current_rival] = label
+  matching_rivals = graph[current_rival]
+  
+  for matching_rival in matching_rivals:
+    labels[matching_rival] = new_label 
+    _label(matching_rival, new_label, graph, labels)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I haven&amp;rsquo;t thought about how to solve the problem where the number of colours/labels &lt;code&gt;k &amp;gt; 2&lt;/code&gt;.
+I could always rely on backtracking, and build a tree of the whole candidate solution space. However even if I have the
+candidate solution space, I&amp;rsquo;d need to check if a candidate solution is a valid one which is another hard problem on its own.
+The fact that the number of colours here is 2 makes the solution much easier, as the general solution to the graph colouring problem appears to be &lt;a href=&#34;https://en.wikipedia.org/wiki/NP-completeness&#34;&gt;NP-complete&lt;/a&gt;.&lt;/p&gt;
+</description>
+		</item>
+		<item>
+			<title>Product Review: Jarvis Bamboo Standing Desk</title>
+			<link>http://iemre.github.io/posts/my-first-post/</link>
+			<pubDate>Sun, 31 May 2020 21:58:25 +0100</pubDate>
+			<guid isPermaLink="true">http://iemre.github.io/posts/my-first-post/</guid>
+			<description>&lt;p&gt;I&amp;rsquo;ve been pondering whether or not a standing desk would add value to my work flow and life. And I finally got the &lt;a href=&#34;https://www.fully.com/en-eu/standing-desks/jarvis-adjustable-height-desk-bamboo.html&#34;&gt;Jarvis Standing Desk&lt;/a&gt; for a couple reasons:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;It is probably a good investment now with the coronavirus pandemic and the advent of remote work.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I find that I need to stretch and move my body quite frequently.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Many times during the day, I find that I need to do something quick on my computer and I feel like having to sit down for that is slow and inefficient.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here a picture:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://iemre.github.io/jarvis.jpg&#34; alt=&#34;Jarvis Bamboo Standing Desk&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I went with the &lt;code&gt;120cm x 80cm&lt;/code&gt; option. The depth (80cm) of the desk is enough for my 31-inch display monitor.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s all automatic. I touch the button on the side of the desk to make it go up and down. I thought about getting the manual one with a crank but I&amp;rsquo;m glad I got the automatic one, because I adjust the desk height quite often.&lt;/p&gt;
+&lt;p&gt;After an hour or so of standing, I feel like sitting down for a half hour. Whether or not I work sitting down or standing up also depends on the activity I&amp;rsquo;m involved in: if I&amp;rsquo;m actively thinking about a problem or writing an exciting piece of code, I will probably do so while standing. The same applies if I am in a remote meeting that requires my full and undivided attention. I turn my camera off in those meetings, because I move quite a lot when I&amp;rsquo;m standing which may be distracting to other people.&lt;/p&gt;
+&lt;p&gt;Overall, I&amp;rsquo;m quite happy with the desk. It&amp;rsquo;s well-designed and built, and it adds value to my daily routine. It is slightly on the expensive side but its price is comparable to other products in the market.&lt;/p&gt;
+</description>
+		</item>
+	</channel>
 </rss>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <title>Software Development from Apple iPad | blog etc</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="This post describes my current &ldquo;work from iPad&rdquo; set-up. There are a few good reasons for doing this:
+Battery. This is a big reason for me to take the iPad with me on the go instead of a laptop. Its battery lasts days. Portability. The iPad is smaller and lighter than most laptops. And I can use it as an e-reader on public transport. Drawing with the Apple pen Hardware The 2018 iPad Pro with 11&rsquo;&rsquo; display, 64GB storage - https://support." />
+  <meta name="author" content="" />
+  <meta name="generator" content="Hugo 0.110.0">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="blog etc Feed" />
+  <link rel="stylesheet" href="/style.ea83d25f4b0f23db598aad472c930103bef3f8fe5a6ec12ce6ee00c4b293eb8d.css" />
+  <script defer src="/script.e8003a738bd5520c8edb960d68bdae1bd1f2cc6827666e54d188fb7f31e06a76.js" integrity="sha256-6AA6c4vVUgyO25YNaL2uG9HyzGgnZm5U0Yj7fzHganY="></script>
+  
+
+</head>
+<body>
+<div class="pure-g">
+  <div class="pure-u-1-24 pure-u-md-5-24"></div>
+  <div class="pure-u-22-24 pure-u-md-14-24">
+  
+<div class="navigation">
+  <div class="navigation-header">
+    <div class="pure-menu pure-menu-horizontal">
+      <a class="pure-menu-heading pure-menu-link" href="/">
+        blog etc
+      </a>
+    </div>
+  </div>
+</div>
+
+  
+<div>
+  <div>
+    <h2 class="post-title">
+      
+      Software Development from Apple iPad
+    </h2>
+    
+
+  </div>
+  <div>
+    <p>This post describes my current &ldquo;work from iPad&rdquo; set-up. There are a few good reasons for doing this:</p>
+<ul>
+<li>Battery. This is a big reason for me to take the iPad with me on the go instead of a laptop. Its battery lasts days.</li>
+<li>Portability. The iPad is smaller and lighter than most laptops. And I can use it as an e-reader on public transport.</li>
+<li>Drawing with the Apple pen</li>
+</ul>
+<h2 id="hardware">Hardware</h2>
+<ul>
+<li>The 2018 iPad Pro with 11&rsquo;&rsquo; display, 64GB storage - <a href="https://support.apple.com/kb/SP784">https://support.apple.com/kb/SP784</a>. I&rsquo;ve never needed to upgrade my iPad even after 5 years. Apple built it too well.</li>
+<li>The Apple Magic Keyboard. This does the job. Not the most ergonomic keyboard but it&rsquo;s integration with the iPad is very good, and I do sometimes use the trackpad.</li>
+<li>Mac Mini (M2): Cheapest one available on the market. The key feature is the power efficiency. It is more than enough for my development work (I don&rsquo;t compile the Linux Kernel). It is connected to internet via ethernet, the ethernet connection is important as it allows the Mac to wake up when I ssh into it. I wasn&rsquo;t able to get the &ldquo;wake up upon request&rdquo; featue working without the cabled ethernet connection. I use a powerline adapter (<a href="https://amzn.eu/d/aN2s7W0">this one</a>) to avoid laying cables around the flat.</li>
+</ul>
+<h2 id="software">Software</h2>
+<ul>
+<li>The Blink Shell app for iOS is really unparalleled at SSH. I paid a bit of money for it but it was worth every penny. Works well with a display monitor too when you connect your tablet to one.</li>
+<li>Tailscale VPN is indispensable. One is installed on the OSX on Mac Mini at home, another one on the iPad. You sign in with your email and can see all of your devices and their IP addresses connected to the VPN. The IP address you get on the VPN are fairly static, which allows me to not worry about looking up the IP address of my Mac every time I ssh into it.</li>
+<li>On the server side (Mac Mini), I have <a href="https://neovim.io">Neovim</a> installed with the <a href="https://github.com/junegunn/vim-plug">Vim Plug</a> plugin manager. Here is my Vim Plug configuration with my favourite plugins:
+<ul>
+<li>NERDTree for managing files</li>
+<li>CtrlP for fuzzy-finding files</li>
+<li>vim-go for Golang</li>
+<li>vim-clap: An experimental new addition to my library written in Rust. This does a lot of things! So far I&rsquo;ve used it mainly for looking at Git history and commit diffs.</li>
+</ul>
+</li>
+</ul>
+<pre tabindex="0"><code>$ cat $HOME/.config/nvim/init.vim 
+
+
+&#34; Open file browser on the side when F is pressed twice in a row
+nnoremap FF :NERDTreeToggle&lt;CR&gt;
+
+call plug#begin()
+&#34; Multiple Plug commands can be written in a single line using | separators
+Plug &#39;SirVer/ultisnips&#39; | Plug &#39;honza/vim-snippets&#39;
+
+&#34; On-demand loading
+Plug &#39;preservim/nerdtree&#39;, { &#39;on&#39;: &#39;NERDTreeToggle&#39; }
+Plug &#39;tpope/vim-fireplace&#39;, { &#39;for&#39;: &#39;clojure&#39; }
+
+&#34; Using a non-default branch
+Plug &#39;rdnetto/YCM-Generator&#39;, { &#39;branch&#39;: &#39;stable&#39; }
+
+&#34; Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
+Plug &#39;fatih/vim-go&#39;, { &#39;tag&#39;: &#39;*&#39; }
+
+&#34; Plugin options
+Plug &#39;nsf/gocode&#39;, { &#39;tag&#39;: &#39;v.20150303&#39;, &#39;rtp&#39;: &#39;vim&#39; }
+
+&#34; Plugin outside ~/.vim/plugged with post-update hook
+Plug &#39;junegunn/fzf&#39;, { &#39;dir&#39;: &#39;~/.fzf&#39;, &#39;do&#39;: &#39;./install --all&#39; }
+
+Plug &#39;kien/ctrlp.vim&#39;
+
+&#34; Build the Rust binary if `cargo` exists on your system.
+Plug &#39;liuchengxu/vim-clap&#39;, { &#39;do&#39;: &#39;:Clap install-binary&#39; }
+
+&#34; The bang version will try to download the prebuilt binary if `cargo` does not exist.
+Plug &#39;liuchengxu/vim-clap&#39;, { &#39;do&#39;: &#39;:Clap install-binary!&#39; }
+
+&#34; `:Clap install-binary[!]` will always try to compile the binary locally.
+&#34; If you do care about the disk used for the compilation, use the way of force download,
+&#34; which will directly download the prebuilt binary even if `cargo` is available.
+Plug &#39;liuchengxu/vim-clap&#39;, { &#39;do&#39;: { -&gt; clap#installer#force_download() } }
+
+&#34; `:Clap install-binary[!]` will run using the terminal feature which is inherently async.
+&#34; If you don&#39;t want that and hope to run the hook synchorously:
+Plug &#39;liuchengxu/vim-clap&#39;, { &#39;do&#39;: has(&#39;win32&#39;) ? &#39;cargo build --release&#39; : &#39;make&#39; }
+
+&#34; Initialize plugin system
+&#34; - Automatically executes `filetype plugin indent on` and `syntax enable`.
+call plug#end()
+&#34; You can revert the settings after the call like so:
+&#34;   filetype indent off   &#34; Disable file-type-specific indentation
+&#34;   syntax off            &#34; Disable syntax highlighting
+</code></pre><ul>
+<li>tmux: Tmux is really a requirement. If I lose my internet connection, my work won&rsquo;t be lost because tmux will keep the work in a tmux session. I ssh into my Mac again, and run <code>tmux a</code> which attaches the ssh session to the existing tmux session, and everything is back as I left them.</li>
+<li>ngrok: For serving HTTP</li>
+</ul>
+
+  </div>
+</div>
+  <div class="footer">
+  <div class="footer-content">
+    <div class="pure-menu pure-menu-horizontal">
+      <ul class="pure-menu-list">
+        <li class="pure-menu-item" title="RSS Feed">
+          <a href="/index.xml" class="pure-menu-link">RSS</a>
+        </li>
+        <li class="pure-menu-item fix-cursor-pointer" title="Go to top">
+          <a class="pure-menu-link" id="btn-gototop">
+            <span class="fix-placement-up">&#x21e7;&#xfe0e;</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  </div>
+  <div class="pure-u-1-24 pure-u-md-5-24"></div>
+</div>
+</body>
+</html>
